@@ -4,46 +4,43 @@ import throttle from 'lodash.throttle';
 const iframe = document.querySelector('#vimeo-player');
 const player = new Player(iframe);
     
-// const STORAGE_KEY = "videoplayer-current-time";
-// player.on('timeupdate', onTimeupdate);
-// function onTimeupdate(evt) {
-//     const currentTime = {
-//     duration:61.857,
-//     percent:0.049,
-//     seconds:3.034,
-// } 
-//     localStorage.setItem(STORAGE_KEY, JSON.stringify(time));
-    
-// }
+const STORAGE_KEY = "videoplayer-current-time";
 
-    iframe.addEventListener
-    // player.on('play', function() {
-    //     console.log('played the video!');
-    // });
-
-
-
-    player.getVideoTitle().then(function(title) {
+// /////////////
+ player.getVideoTitle().then(function(title) {
         console.log('title:', title);
+ });
+    
+ player.on('play', function() {
+        console.log('played the video!');
     });
 
-
-console.log(localStorage.getItem("videoplayer-current-time"));
-    
-const onPlay = function ({ duration, percent, seconds }) {
-    const stopTime = evt.setCurrentTime;
-    console.log(stopTime);
-    // data is an object containing properties specific to that event
-};
+////////////////
 
 player.on('timeupdate', onTimeupdate);
 
-currentTime 
-{
-    duration: 61.857
-    percent: 0.049
-    seconds: 3.034
+function onTimeupdate() {
+    console.log('time updated')
 }
+
+//     localStorage.setItem(STORAGE_KEY, JSON.stringify(time));
+
+// console.log(localStorage.getItem("videoplayer-current-time"));
+    
+// const onPlay = function ({ duration, percent, seconds }) {
+//     const stopTime = evt.setCurrentTime;
+//     console.log(stopTime);
+//     // data is an object containing properties specific to that event
+// };
+
+// player.on('timeupdate', onTimeupdate);
+
+// currentTime 
+// {
+//     duration: 61.857
+//     percent: 0.049
+//     seconds: 3.034
+// }
 
 // function onPlay() {
 //    localStorage.setItem("videoplayer-current-time", "timeupdate.seconds"); 

@@ -26,7 +26,7 @@ function handleSubmit(evt) {
 }
 
 function handleInput(evt) {
-  const { email, message } = evt.currentTarget.elements;
+  const { email, message } = evt.target.elements;
   // const { email, message } = evt.target.elements;
   const formData = { email: email.value, message: message.value };
 

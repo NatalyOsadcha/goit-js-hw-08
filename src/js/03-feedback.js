@@ -7,9 +7,10 @@ const STORAGE_KEY = 'feedback-form-state';
 
 form.addEventListener('submit', handleSubmit);
 form.addEventListener('input', throttle(handleInput, 500));
-// input.addEventListener('input', throttle(handleInput, 500));
-// textarea.addEventListener('input', throttle(handleInput, 500));
+// input.addEventListener('input', handleInput, 500);
+// textarea.addEventListener('input', handleInput, 500);
 populateData();
+let formData = {};
 
 function handleSubmit(evt) {
   evt.preventDefault();
@@ -26,8 +27,10 @@ function handleSubmit(evt) {
 }
 
 function handleInput(evt) {
-  const { email, message } = evt.target.elements;
-  // const { email, message } = evt.target.elements;
+ 
+  const key = evt.target.name;
+  formData[key]= evt.target.value;
+
   const formData = { email: email.value, message: message.value };
 
   console.log(formData);

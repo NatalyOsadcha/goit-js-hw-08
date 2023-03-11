@@ -4,17 +4,17 @@ import throttle from 'lodash.throttle';
 const iframe = document.querySelector('#vimeo-player');
 const player = new Player(iframe);
     
-const STORAGE_KEY = "videoplayer-current-time";
-player.on('timeupdate', onTimeupdate);
-function onTimeupdate(evt) {
-    const currentTime = {
-    duration:61.857,
-    percent:0.049,
-    seconds:3.034,
-} 
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(time));
+// const STORAGE_KEY = "videoplayer-current-time";
+// player.on('timeupdate', onTimeupdate);
+// function onTimeupdate(evt) {
+//     const currentTime = {
+//     duration:61.857,
+//     percent:0.049,
+//     seconds:3.034,
+// } 
+//     localStorage.setItem(STORAGE_KEY, JSON.stringify(time));
     
-}
+// }
 
     iframe.addEventListener
     // player.on('play', function() {
